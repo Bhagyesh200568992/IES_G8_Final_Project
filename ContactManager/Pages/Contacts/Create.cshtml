@@ -1,0 +1,74 @@
+@page
+@model ContactManager.Pages.Contacts.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Add Team Member</h1>
+
+<br>
+<div class="row">
+    <div class="col-md-10">
+        <form method="post" class="row g-3 needs-validation modal-body">
+
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class=" row mb-3 ">
+                <label asp-for="Contact.Name" class="col-sm-3 col-form-label"></label>
+                <div class="col-sm-9">
+                <input asp-for="Contact.Name" class="form-control col-sm-" placeholder="Enter Name" />
+                <span asp-validation-for="Contact.Name" class="text-danger"></span>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="Contact.Address" class="col-sm-3 control-label"></label>
+                <div class="col-sm-9">
+                    <input asp-for="Contact.Address" class="form-control col-sm-" placeholder="Enter Address" />
+                <span asp-validation-for="Contact.Address" class="text-danger"></span>
+            </div>
+            </div>
+
+            <div class="row mb-3">
+                <label asp-for="Contact.City" class=" col-sm-3 control-label"></label>
+                 <div class="col-sm-9">
+                    <input asp-for="Contact.City" class="form-control col-sm-" placeholder="Enter City" />
+                <span asp-validation-for="Contact.City" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Contact.State" class="col-sm-3 control-label"></label>
+                        <div class="col-sm-9">
+                    <input asp-for="Contact.State" class="form-control col-sm-" placeholder="Enter State" />
+                <span asp-validation-for="Contact.State" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Contact.Zip" class="col-sm-3 control-label"></label>
+                            <div class="col-sm-9">
+                    <input asp-for="Contact.Zip" class="form-control col-sm-" placeholder="Enter Zip" />
+                <span asp-validation-for="Contact.Zip" class="text-danger"></span>
+            </div>
+            </div>
+            <div class="row mb-3">
+                <label asp-for="Contact.Email" class=" col-sm-3 control-label"></label>
+                <div class="col-sm-9">
+                    <input asp-for="Contact.Email" class="form-control col-sm-" placeholder="Enter Email" />
+                <span asp-validation-for="Contact.Email" class="text-danger"></span>
+            </div>
+    </div>
+            <br>            
+            <div class="form-group text-center">
+                <input type="submit" value="Create" class="btn btn-success " />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index" class="btn btn-primary ">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
